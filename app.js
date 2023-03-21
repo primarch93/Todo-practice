@@ -22,6 +22,10 @@ Vue.createApp({
         });
         this.valueInput = '';
       },
+      removeAllMasks() {
+        this.needDoList = [];
+        this.completeList = [];
+      },
       doCheck(index, type) {
         if (type === 'need') {
           const completeMask = this.needDoList.splice(index, 1);
