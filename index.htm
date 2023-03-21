@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo practice</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDo List Vue.js v.3</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div id="app">
     <div class="header">
-        <div class="container">
-            <div class="logo">Todo list</div>
-            <div class="form">
-                <input type="text">
-                <button class="btn">Add-Task</button>
-            </div>
+      <div class="container">
+        <div class="logo">ToDo List</div>
+        <div class="form">
+          <input
+            type="text"
+            v-bind:value="valueInput"
+            v-on:input="handleInput"
+            v-on:keypress.enter="addTask"
+            >
+          <button class="btn" v-on:click="addTask">Add a new task</button>
         </div>
+      </div>
     </div>
     <div class="container">
-        <h2>
-            <span>
-                To Do
-            </span>
-            <span class="mask-num">10</span>
-        </h2>
-        <ul class="mask-list">
-<li>
-    <div>
-        <input type="checkbox"> 
-        <span>new practice</span>
+      <h2>
+        <span>To Do</span>
+        <span class="mask-num">{{ needDoList.length }}</span>
+      </h2>
+      <ul class="mask-list">
+        <li v-for="(mask, index) in needDoList" :key="mask.id">
+            <div v-if="!mask.editing"> 
+              <input type="checkbox" v-on:change="doCheck(index, 'need')"/>
+              <span>{{ mask.title }}</span>
+              <button class="btn-edit" v-on:click="mask.editing = true">Edit</button> 
+            <div v-else> 
+              <input type="text" v-model="mask.title"/>
+              <button class="btn-save" v-on:click="mask.editing = false">Save</button> 
+            <button class="btn-remove" v-on:click="removeMask(index, 'need')">Remove</button>
+          </li>
+      </ul>
+      <h2>
+        <span>Done</span>
+        <span class="mask-num">{{ completeList.length }}</span>
+      </h2>
+      <ul class="mask-list complete-list">
+        <li
+          v-for="(mask, index) in completeList"
+          :key="mask.id"
+        >
+          <div>
+            <input type="checkbox" v-on:change="doCheck(index, 'complete')"  checked>
+            <span>{{ mask.title }}</span>
+          </div>
+          <button class="btn-remove" v-on:click="removeMask(index, 'complete')">Remove</button>
+        </li>
+      </ul>
     </div>
-    <button class="btn-remove">Remove</button>
-</li>
-        </ul>
-        <h2>
-            <span>
-                Done
-            </span>
-            <span class="mask-num">10</span>
-        </h2>
-        <ul class="mask-list complete-list">
-<li>
-    <div>
-        <input type="checkbox" checked> 
-        <span>coding</span>
-    </div>
-    <button class="btn-remove">Remove</button>
-</li>
-        </ul>
-    </div>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="app.js"></script>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
