@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">Todo list</div>
+            <div class="form">
+                <input type="text">
+                <button class="btn">Add-Task</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>
+            <span>
+                To Do
+            </span>
+            <span class="mask-num">10</span>
+        </h2>
+        <ul class="mask-list">
+<li>
+    <div>
+        <input type="checkbox"> 
+        <span>new practice</span>
+    </div>
+    <button class="btn-remove">Remove</button>
+</li>
+        </ul>
+        <h2>
+            <span>
+                Done
+            </span>
+            <span class="mask-num">10</span>
+        </h2>
+        <ul class="mask-list complete-list">
+<li>
+    <div>
+        <input type="checkbox" checked> 
+        <span>coding</span>
+    </div>
+    <button class="btn-remove">Remove</button>
+</li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
