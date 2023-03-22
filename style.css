@@ -1,6 +1,10 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
+    height: 100%;
+    background-image: url(./Todo.png);
+     background-size: cover;
+  background-position: center;
   }
   
   h2 {
@@ -10,6 +14,7 @@ body {
     padding-bottom: 20px;
     margin: 25px 0;
     border-bottom: 1px solid #bfbfbf;
+    color: #ffffff;
   }
   
   h2 .mask-num {
@@ -19,7 +24,9 @@ body {
     font-size: 14px;
     font-weight: 700;
     padding: 5px 10px;
+    margin-bottom: 10px;
   }
+  
   
   .container {
     width: 800px;
@@ -31,6 +38,7 @@ body {
     background-color: #333;
     padding: 10px 0;
     margin-bottom: 40px;
+    background-color: transparent;
   }
   
   .header .container {
@@ -63,8 +71,11 @@ body {
     box-sizing: border-box;
     outline: none;
     transition: 0.2s border;
+    background-color: transparent;
+    color: white;
   }
   
+
   .header .container .form input:focus {
     border: 1px solid #12c0dd;
   }
@@ -89,13 +100,14 @@ body {
   
   .mask-list li {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
     height: 32px;
     line-height: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     border-radius: 3px;
     background-color: #fff;
+    background-color: transparent;
   }
   
   .mask-list.complete-list li {
@@ -104,17 +116,36 @@ body {
   }
   .mask-list {
       padding-left: 0;
+      
   }
-  
+  .input_change{
+    width: calc(100% - 145px);
+    height: 40px;
+    text-indent: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    border-radius: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.2s border;
+    background-color: transparent;
+    color: white;
+    height: 30px;
+    overflow: auto;
+    width: 670px;
+  }
+
   input[type="checkbox"] + span {
       padding-left: 10px;
+      color: #fcfcfc;
+      margin-right: 20px;
   }
   
   .btn-remove {
       border: 1px solid #2a2f36;
       font-size: 12px;
       border: 2px solid #2a2f36;
-      background-color: #333333;
+      background-color: #026999;
       color: #fff;
       font-weight: 700;
       text-transform: uppercase;
@@ -122,11 +153,12 @@ body {
       font-size: 12px;
       outline: none;
       transition: 0.2s;
+      margin-left: auto;
   }
   
   .btn-remove:hover {
-    background-color: #535151;
-    border-color: #535151;
+    background-color: #2a56e7;
+    border-color:#2a56e7;
   }
   
   input[type="checkbox"]:checked,
@@ -175,7 +207,7 @@ body {
      top:calc(50% - 10px);
      background-color: transparent;
      border-radius: 2px;
-     border: 2px solid #5d575f;
+     border: 2px solid #ffffff;
   }
   input[type="checkbox"]:not(:checked) + span::after{
      content:'';
@@ -187,5 +219,41 @@ body {
      left: 4px;
      top: calc(50% - 6px);
      background-color: #7d25a9;
+  }
+  .btn-edit{
+    border: 1px solid #2a2f36;
+      font-size: 12px;
+      border: 2px solid #2a2f36;
+      background-color: #026999;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      font-size: 12px;
+      outline: none;
+      transition: 0.2s;
+      margin-left: auto;
+  }
+  .btn-edit:hover{
+    background-color: #2a56e7;
+    border-color: #2a56e7;
+  }
+  .btn-save{
+    border: 1px solid #2a2f36;
+    font-size: 12px;
+    border: 2px solid #2a2f36;
+    background-color: #026999;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-size: 12px;
+    outline: none;
+    transition: 0.2s;
+  
+  }
+  .btn-save:hover{
+    background-color: #2a56e7;
+    border-color: #2a56e7;
   }
   

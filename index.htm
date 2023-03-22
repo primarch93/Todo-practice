@@ -33,12 +33,12 @@
       </h2>
       <ul class="mask-list">
         <li v-for="(mask, index) in needDoList" :key="mask.id">
-            <div v-if="!mask.editing"> 
+            <div v-if="!mask.editing" class="box"> 
               <input type="checkbox" v-on:change="doCheck(index, 'need')"/>
               <span>{{ mask.title }}</span>
               <button class="btn-edit" v-on:click="mask.editing = true">Edit</button> 
             <div v-else> 
-              <input type="text" v-model="mask.title"/>
+              <input type="text" v-model="mask.title"/ class="input_change">
               <button class="btn-save" v-on:click="mask.editing = false">Save</button> 
             <button class="btn-remove" v-on:click="removeMask(index, 'need')">Remove</button>
        
