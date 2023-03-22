@@ -109,7 +109,12 @@ body {
     background-color: #fff;
     background-color: transparent;
   }
-  
+  .box input,
+.box span,
+.box button {
+  vertical-align: middle;
+}
+
   .mask-list.complete-list li {
     border-left-color: #999;
     opacity: .5;
@@ -169,12 +174,18 @@ body {
      width: 20px;
      height: 20px;
      margin-top: 6px;
+     overflow: auto;
   }
   input[type="checkbox"]:checked + span,
   input[type="checkbox"]:not(:checked) + span{
      position: relative;
      padding-left: 35px;
      cursor:pointer;
+     display: inline-block;
+     width: 692px;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
   }
   input[type="checkbox"]:checked + span::before{
      content:'';
