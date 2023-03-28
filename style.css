@@ -245,6 +245,7 @@ body {
       outline: none;
       transition: 0.2s;
       margin-left: auto;
+      display: none;
   }
   .btn-edit:hover{
     background-color: #2a56e7;
@@ -262,7 +263,6 @@ body {
     font-size: 12px;
     outline: none;
     transition: 0.2s;
-  
   }
   .btn-save:hover{
     background-color: #2a56e7;
